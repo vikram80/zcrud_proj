@@ -1,9 +1,74 @@
-<mvc:View controllerName="zcrud_proj.zcrud_proj.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" controllerName="zcrud_proj.zcrud_proj.controller.View1"
+	displayBlock="true">
 	<Shell id="shell">
 		<App id="app">
 			<pages>
 				<Page id="page" title="{i18n>title}">
-					<content></content>
+					<content>
+						<l:VerticalLayout width="100%">
+							<l:content>
+								<FlexBox width="100%" id="box0" height="10px"/>
+								<Panel>
+									<FlexBox height="50px" alignItems="Start" justifyContent="Start" class="sapUiResponsiveMargin">
+										<items>
+											<Button xmlns="sap.m" text="Create" id="btnCreate" class="sapUiSmallMarginEnd" press="onProcess" type="Emphasized"/>
+											<Button xmlns="sap.m" text="Read" id="btnRead" class="sapUiSmallMarginEnd" press="onProcess" type="Emphasized"/>
+											<Button xmlns="sap.m" text="Update" id="btnUpd" class="sapUiSmallMarginEnd" press="onProcess" type="Emphasized"/>
+											<Button xmlns="sap.m" text="Delete" id="btnDel" press="onProcess" type="Emphasized"/>
+										</items>
+									</FlexBox>
+									<FlexBox height="10px" alignItems="Start" justifyContent="Start" class="sapUiResponsiveMargin">
+										<items>
+											<!--<l:HorizontalLayout id="layout1" >-->
+											<Input xmlns="sap.m" value="" id="inpId" placeholder="User id"/>
+											<Label class="sapUiSmallMarginEnd"/>
+											<Input xmlns="sap.m" value="" id="inpName" placeholder="Name"/>
+											<Label class="sapUiSmallMarginEnd"/>
+											<Input xmlns="sap.m" value="" id="inpEmail" placeholder="Email"/>
+											<Label class="sapUiSmallMarginEnd"/>
+											<DatePicker xmlns="sap.m" id="inpDate"/>
+										</items>
+									</FlexBox>
+								</Panel>
+							</l:content>
+							<Panel>
+								<Table noDataText="No data selected" id="tblUser" items="{ path: 'userdata>/Result' }" class="sapUiSmallMarginEnd">
+									<items>
+										<ColumnListItem type="Active" id="item0">
+											<cells>
+												<Text text="{userdata>Id}" id="text0"/>
+												<Text text="{userdata>Name}" id="text1"/>
+												<Text text="{userdata>Email}" id="text2"/>
+												<Text text="{userdata>JoinDate}" id="text3"/>
+											</cells>
+										</ColumnListItem>
+									</items>
+									<columns>
+										<Column id="column0">
+											<header>
+												<Label text="User Id" id="label3" class="sapUiSmallMarginEnd"/>
+											</header>
+										</Column>
+										<Column id="column1">
+											<header>
+												<Label text="Name" id="label4"/>
+											</header>
+										</Column>
+										<Column id="column2">
+											<header>
+												<Label text="Email" id="label5"/>
+											</header>
+										</Column>
+										<Column id="column4">
+											<header>
+												<Label text="Join date" id="label6"/>
+											</header>
+										</Column>
+									</columns>
+								</Table>
+							</Panel>
+						</l:VerticalLayout>
+					</content>
 				</Page>
 			</pages>
 		</App>
