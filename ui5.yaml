@@ -7,7 +7,7 @@ builder:
     - name: webide-extension-task-updateNeoApp
       afterTask: generateVersionInfo
       configuration:
-        destDir: dist
+        destDir: dist //
         appFolder: webapp
         nameSpace: zcrud_proj
     - name: webide-extension-task-updateManifestJson
